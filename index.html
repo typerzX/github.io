@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Provincial Assessor's Office</title>
+	
+  
+  <style>
+    /* Global styles */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+ align-items: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+body {
+  background-image: url('img/cover.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Arial Black, sans-serif, Arial Rounded MT Bold;
+  font-size: 16px;
+  line-height: .4em;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 280px;
+  padding: 0.5rem;
+
+}
+
+/* Header styles */
+header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #333;
+}
+
+header {
+  background-color: #4CAF50;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.adjust-line-height {
+line-height: 1em;
+}
+header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+  overflow: auto;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Queue number styles */
+
+.current-queue {
+  background-color: #fff;
+  border: 15px solid gray;
+  border-radius: 50%;
+  color: #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9rem;
+  height: 300px;
+  margin: 2rem auto;
+  width: 300px;
+}
+.current-queue2 {
+  background-color: #fff;
+  border: 15px solid gray;
+  border-radius: 50%;
+  color: #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9rem;
+  height: 300px;
+  margin: 2rem auto;
+  width: 300px;
+}
+
+/* Form styles */
+
+.queue-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0;
+  margin-left:270px;
+  max-width: 300px;
+}
+
+.queue-form2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0;
+  margin-right: 230px;
+  max-width: 300px;
+}
+
+.queue-form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.queue-form input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  margin-right: 100px;
+  padding: 0.5rem;
+}
+.queue-form2 input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-left: 100px;
+}
+
+
+.queue-form input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.queue-form input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Remove client button styles */
+
+.add-client-button {
+  background-color: #f44336;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  
+  font-size: 3rem;
+  margin: .5rem auto;
+  padding: 0.5rem;
+}
+
+.add-client-button:hover {
+  background-color: #da190b;
+}
+.add-client-button2 {
+  background-color: #f44336;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+
+  font-size: 3rem;
+  margin: .5rem auto;
+  padding: 0.5rem;
+}
+
+.add-client-button2:hover {
+  background-color: #da190b;
+}
+/* Dashed border */
+hr.dashed {
+  border-top: 3px dashed #bbb;
+}
+
+/* Dotted border */
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+.next-client {
+  background-color: #3e8e41;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+
+  font-size: 2rem;
+  margin: 2rem;
+  padding: 0.1rem;
+}
+
+
+.next-client:hover {
+  background-color: #5e8e41;
+
+}
+
+/* ADD BUTTON */
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 12rem;
+ height: auto;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #f44336;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #f44336;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #fff;
+}
+/* NEXT BUTTON */
+
+.bot2n {
+ display: inline-block;
+ padding: 12px 24px;
+ border: 3px solid #3e8e41;
+ border-radius: 8px;
+ transition: all 0.2s ease-in;
+ position: relative;
+ overflow: hidden;
+ font-size: 19px;
+ color: #3e8e41;
+ margin-top: 10px;
+ z-index: 1;
+}
+
+.bot2n:before {
+ content: "";
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%) scaleY(1) scaleX(1.25);
+ top: 100%;
+ width: 140%;
+ height: 180%;
+ background-color: rgba(0, 0, 0, 0.05);
+ border-radius: 50%;
+ display: block;
+ transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+ z-index: -1;
+}
+
+.bot2n:after {
+ content: "";
+ position: absolute;
+ left: 55%;
+ transform: translateX(-50%) scaleY(1) scaleX(1.45);
+ top: 180%;
+ width: 160%;
+ height: 190%;
+ background-color: #3e8e41;
+ border-radius: 50%;
+ display: block;
+ transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+ z-index: -1;
+}
+
+.bot2n:hover {
+ color: #ffffff;
+ border: 1px solid #3e8e41;
+}
+
+.bot2n:hover:before {
+ top: -35%;
+ background-color: #3e8e41;
+ transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.bot2n:hover:after {
+ top: -45%;
+ background-color: #3e8e41;
+ transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+    </style>
+
+  </head>
+  <body oncontextmenu="return false">
+	
+	
+	<div class="container" align="center">
+	
+				<div class="row">
+					<div class="column" style="background-color:clear;" align="center">
+						<p id="addQueue"></p>
+							<script src="queue.js">
+							</script>
+
+<form class="queue-form" action="#">
+<div class="current-queue">
+								<b><span id="current-queue">0</span></b></div>
+	<center><button class="learn-more" onclick="addQueue()">
+			<span class="circle" aria-hidden="true">
+					<span class="icon arrow"></span>
+		</span>
+  <span class="button-text">ADD CLIENT</span></button></center>
+	<button class="bot2n" onclick="nextClient()">NEXT CLIENT</button>
+	</form>
+</div>
+
+
+
+
+									<div class="column" style="background-color:clear;" align="center">
+
+			<p id="addQueue2"></p>
+ 	
+									<script src="queue.js">
+									</script>
+
+<form class="queue-form2" action="#">
+<div class="current-queue2">
+								<b><span id="current-queue2">0</span></b></div>
+	<center><button class="learn-more" onclick="addQueue2() "><span class="circle" aria-hidden="true">
+					<span class="icon arrow"></span>
+		</span>
+  <span class="button-text">ADD CLIENT</span></button></center>
+	<button class="bot2n"  onclick="nextClient2()">NEXT CLIENT</button>
+
+
+	</form>
+
+</div>
+</head>
+
+</html>
